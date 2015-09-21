@@ -76,9 +76,12 @@ runScript <- function() {
   dataSet2 = dataSet[,1:68]
   print(head(dataSet2))
   
+  # create file
+  write.table(dataSet2, file = "tidydata.txt", row.name = FALSE) 
+  
   ## Make cookbook
   # load knitr package
-  install.packages("knitr")
+  #install.packages("knitr")
   library(knitr)
   # generate codebook.md and html file
   knit2html("codebook.Rmd")
